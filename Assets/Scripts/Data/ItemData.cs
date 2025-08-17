@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,7 +40,4 @@ public class ItemData : ScriptableObject
 
         return new Vector2Int(maxX - minX + 1, maxY - minY + 1);
     }
-
-
-
 }

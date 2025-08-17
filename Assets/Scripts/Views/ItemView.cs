@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 
 public class ItemView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
@@ -51,14 +50,13 @@ public class ItemView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector2 localPointerPosition;
         RectTransform panelRect = inventoryManager.inventoryPanel.GetComponent<RectTransform>();
         offset = new Vector2(panelRect.rect.width * 0.5f - (inventoryManager.slotSize / inventoryManager.canvas.scaleFactor), -panelRect.rect.height * 0.5f + (inventoryManager.slotSize / inventoryManager.canvas.scaleFactor));
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
             panelRect,
             eventData.position,
             inventoryManager.canvas.worldCamera,
-            out localPointerPosition))
+            out Vector2 localPointerPosition))
         {
             rectTransform.anchoredPosition = localPointerPosition + offset;
         }

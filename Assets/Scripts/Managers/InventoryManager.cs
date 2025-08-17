@@ -1,6 +1,4 @@
-using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -82,8 +80,7 @@ public class InventoryManager : MonoBehaviour
 
     public Slot GetNearestSlot(Vector2 screenPos)
     {
-        Vector2 localPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(gridTransform as RectTransform, screenPos, canvas.worldCamera, out localPos);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(gridTransform as RectTransform, screenPos, canvas.worldCamera, out Vector2 localPos);
         int x = Mathf.FloorToInt(localPos.x / slotSize);
         int y = Mathf.FloorToInt(-localPos.y / slotSize);
         if (x >= 0 && x < inventory.width && y >= 0 && y < inventory.height)
@@ -102,8 +99,7 @@ public class InventoryManager : MonoBehaviour
 
     public ItemInstance MergeItems(ItemInstance item1, ItemInstance item2)
     {
-        ItemInstance[] itemsToDestroy;
-        ItemInstance mergedItem = inventory.MergeItems(item1, item2, out itemsToDestroy);
+        ItemInstance mergedItem = inventory.MergeItems(item1, item2, out ItemInstance[] itemsToDestroy);
 
         if (mergedItem != null)
         {
@@ -209,7 +205,7 @@ public class InventoryManager : MonoBehaviour
     void AddTestItem()
     {
         ItemData rifleData = Resources.Load<ItemData>("Rifle1");
-        ItemData coffeData = Resources.Load<ItemData>("Coffe2");
+        ItemData coffeData = Resources.Load<ItemData>("Coffe1");
         AddItem(rifleData, new Vector2Int(0, 0));
         AddItem(coffeData, new Vector2Int(1, 0));
         AddItem(coffeData, new Vector2Int(2, 0));

@@ -1,5 +1,3 @@
-using NUnit.Framework;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,8 +23,8 @@ public class ExpandButton : MonoBehaviour
 
     public void OnExpandClick()
     {
-        int addWidth = 0;
-        int addHeight = 0;
+        int addWidth;
+        int addHeight;
 
         if (widthInput != null && !string.IsNullOrEmpty(widthInput.text))
         {
@@ -67,39 +65,6 @@ public class ExpandButton : MonoBehaviour
         }
 
         inventoryManager.ExpandInventory(addWidth, addHeight);
-        //    if (widthExpand <= 0 || heigthExpand <= 0)
-        //    {
-        //        Debug.LogWarning("Width and Heigth should be positive");
-        //        return;
-        //    }
-
-        //    if (widthExpand + inventoryManager.inventory.width > 5 || heigthExpand + inventoryManager.inventory.height > 5)
-        //    {
-        //        Debug.LogWarning("Inventory limited at 5x5 cells");
-        //        return;
-        //    }
-
-        //    var itemsToRedraw = new List<ItemInstance>(inventoryManager.inventory.items);
-
-        //    foreach (var item in itemsToRedraw)
-        //    {
-        //        if (item.view != null)
-        //        {
-        //            Destroy(item.view.gameObject);
-        //            item.view = null;
-        //        }
-        //    }
-
-        //    inventoryManager.inventory.Expand(widthExpand, heigthExpand);
-
-        //    inventoryManager.RebuildGrid();
-
-        //    foreach (var item in itemsToRedraw)
-        //    {
-        //        inventoryManager.PlaceItem(item);
-        //    }
-
-        //    inventoryManager.SaveInventory();
     }
 
 }

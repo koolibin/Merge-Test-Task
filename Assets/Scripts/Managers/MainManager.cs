@@ -30,6 +30,5 @@ public class MainManager : MonoBehaviour
         currentStage = GameStage.Merge;
         combatPanel.SetActive(false);
         mergePanel.SetActive(true);
-        
     }
 }

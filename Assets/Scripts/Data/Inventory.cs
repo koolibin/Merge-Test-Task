@@ -1,10 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 [Serializable]
 public class ItemInstance
