@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3940e32d4eaa845b15e488d0da183f, type: 3}
+  m_Name: Bomb1
+  m_EditorClassIdentifier: 
+  type: 2
+  grade: 1
+  attack: 10
+  cooldown: 30
+  target: 0
+  activation: 1
+  shape:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 0, y: 1}
+  - {x: 1, y: 1}
+  icon: {fileID: -2613247888821195678, guid: fe3c52864855d0e4da3fa00392a9e0fa, type: 3}
+  description: Bomb Grade 1
+  nextGrade: {fileID: 11400000, guid: 6b7e4c066c016054499b1689eab26ab8, type: 2}
